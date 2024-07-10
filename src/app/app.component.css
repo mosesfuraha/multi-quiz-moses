@@ -1,0 +1,31 @@
+/* app.css */
+
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Optional: set a background color for the outer wrapper */
+}
+
+.container {
+  display: flex;
+  width: 80%; /* Adjust this width as needed */
+  height: 80%; /* Adjust this height as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
