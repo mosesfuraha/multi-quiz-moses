@@ -1,14 +1,44 @@
-<div class="header">
-  <h1 class="title">Personal Info</h1>
-  <p class="description">Please provide</p>
-  <form
-    action="
+<div class="header-container">
+  <div class="header">
+    <h1 class="text-[2rem] text-[hsl(213,96%,18%)] font-bold">Personal Info</h1>
+
+    <p class="description">
+      Please provide your name,email address, and phone number
+    </p>
+    <form
+      action="
   "
-  >
-    <div class="label">
-      <label for="name">Name</label>
-      <p class="error">This Field Is Required</p>
+    >
+      <div class="label">
+        <label for="name">Name</label>
+        <p class="error">This Field Is Required</p>
+      </div>
+      <input type="text" required id="name" placeholder="e.g Stephen King" />
+
+      <div class="label">
+        <label for="email">Email Address</label>
+        <p class="error">This Field Is Required</p>
+      </div>
+      <input
+        type="email"
+        required
+        id="email"
+        placeholder="e.g Stephenking@lorm.com"
+      />
+
+      <div class="label">
+        <label for="phone">Phone</label>
+        <p class="error">Phone</p>
+      </div>
+      <input
+        type="number"
+        required
+        id="number"
+        placeholder="e.g +234-567-890"
+      />
+    </form>
+    <div class="btn">
+      <button class="next-step" type="submit">Next Step</button>
     </div>
-    <input type="text" required id="name" placeholder="e.g Stephen King" />
-  </form>
+  </div>
 </div>
