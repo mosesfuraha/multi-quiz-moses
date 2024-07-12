@@ -43,7 +43,8 @@
 }
 .step-container b {
   text-transform: uppercase;
-  color: var(--White);
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
 }
 .stp {
   display: flex;

@@ -1,0 +1,148 @@
+.sub-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-left: 3rem;
+}
+
+.container {
+  margin-bottom: auto;
+  padding-top: 2rem;
+  line-height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-description {
+  margin-bottom: 2rem;
+  text-align: start;
+}
+
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-one {
+  border: 2px solid hsl(229, 24%, 87%);
+  border-radius: 7px;
+  width: 130px;
+  height: 170px;
+  cursor: pointer;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: border-color 0.3s ease;
+}
+
+.card-one:hover {
+  border-color: hsl(206, 94%, 87%);
+  /* background-color: hsl(206, 94%, 87%); */
+}
+
+.plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.plan-info b {
+  color: hsl(213, 96%, 18%);
+}
+.plan-info span {
+  color: hsl(213, 96%, 18%);
+}
+
+.monthly,
+.yearly {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: hsl(0, 0%, 100%);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: hsl(213, 96%, 18%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.next-stp {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 7px;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  width: 100px;
+}
+.prev-stp {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  border: none;
+  font-weight: 700;
+  background-color: transparent;
+  border-radius: 7px;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+}
+
+.next-stp:hover {
+  background-color: hsl(213, 96%, 25%);
+  border: hsl(0, 0%, 100%);
+}

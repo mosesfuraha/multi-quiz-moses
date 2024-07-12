@@ -1,0 +1,32 @@
+button {
+  border: none;
+  font-weight: 700;
+  background-color: transparent;
+  border-radius: 7px;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+  margin-top: 3rem;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+button.next-step {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+}
+
+button.next-step:hover {
+  background-color: hsl(213, 96%, 25%);
+  border: hsl(0, 0%, 100%);
+}
+
+button.go-back {
+  background-color: transparent;
+  color: hsl(231, 11%, 63%);
+}
+
+button.go-back:hover {
+  background-color: hsl(0, 0%, 90%);
+}
