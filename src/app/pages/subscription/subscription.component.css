@@ -11,7 +11,6 @@
   line-height: 2.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .sub-description {
@@ -28,8 +27,8 @@
 .card-one {
   border: 2px solid hsl(229, 24%, 87%);
   border-radius: 7px;
-  width: 130px;
-  height: 170px;
+  width: 150px;
+  height: 100%;
   cursor: pointer;
   padding: 1rem;
   display: flex;
@@ -41,7 +40,10 @@
 
 .card-one:hover {
   border-color: hsl(206, 94%, 87%);
-  /* background-color: hsl(206, 94%, 87%); */
+}
+
+.card-one.chosen {
+  border: 2px solid hsl(228, 100%, 84%);
 }
 
 .plan-info {
@@ -49,11 +51,13 @@
   flex-direction: column;
   gap: 0.3rem;
 }
+
 .plan-info b {
-  color: hsl(213, 96%, 18%);
+  color: inherit;
 }
+
 .plan-info span {
-  color: hsl(213, 96%, 18%);
+  color: inherit;
 }
 
 .monthly,
@@ -61,11 +65,21 @@
   color: hsl(231, 11%, 63%);
   font-weight: 500;
 }
+
+.sw-active {
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+}
+
 .switcher {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  width: 70%;
+  background-color: hsla(229, 24%, 87%, 0.321);
+  border-radius: 10px;
 }
 
 .switch {
@@ -117,32 +131,4 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-.next-stp {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  border: none;
-  padding: 0.2rem 0.5rem;
-  border-radius: 7px;
-  background-color: hsl(213, 96%, 18%);
-  color: hsl(0, 0%, 100%);
-  cursor: pointer;
-  width: 100px;
-}
-.prev-stp {
-  margin-top: auto;
-  margin-bottom: 2rem;
-  border: none;
-  font-weight: 700;
-  background-color: transparent;
-  border-radius: 7px;
-  color: hsl(231, 11%, 63%);
-  cursor: pointer;
-}
-
-.next-stp:hover {
-  background-color: hsl(213, 96%, 25%);
-  border: hsl(0, 0%, 100%);
 }

@@ -33,8 +33,16 @@
       </div>
     </form>
     <div class="btns">
-      <button class="prev-stp" type="button">Go Back</button>
-      <button class="next-stp" type="submit">Next Step</button>
+      <app-resubalbutton
+        [label]="'Go Back'"
+        [type]="'button'"
+        [customClass]="'go-back'"
+      ></app-resubalbutton>
+      <app-resubalbutton
+        [label]="'Next Step'"
+        [type]="'button'"
+        [customClass]="'next-step'"
+      ></app-resubalbutton>
     </div>
   </div>
 </div>

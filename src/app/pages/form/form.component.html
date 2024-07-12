@@ -1,48 +1,95 @@
-<div class="header-container font-[Ubuntu]">
-  <div class="header">
-    <h1 class="text-[2rem] text-[hsl(213,96%,18%)] font-bold">Personal Info</h1>
+<div *ngIf="!showSubscription">
+  <div class="header-container font-[Ubuntu]">
+    <div class="header">
+      <h1 class="text-[2rem] text-[hsl(213,96%,18%)] font-bold">
+        Personal Info
+      </h1>
+      <p class="description">
+        Please provide your name, email address, and phone number
+      </p>
+      <form class="mt-4" [formGroup]="registrationForm">
+        <div class="label mb-4">
+          <label for="name" class="block">Name</label>
+          <small
+            class="error"
+            *ngIf="
+              registrationForm.get('userName')?.invalid &&
+              registrationForm.get('userName')?.touched
+            "
+          >
+            This Field Is Required
+          </small>
+        </div>
+        <input
+          type="text"
+          id="username"
+          formControlName="userName"
+          placeholder="e.g Stephen King"
+          [class.invalid]="
+            registrationForm.get('userName')?.invalid &&
+            registrationForm.get('userName')?.touched
+          "
+        />
 
-    <p class="description">
-      Please provide your name, email address, and phone number
-    </p>
-    <form action="" class="mt-4">
-      <div class="label mb-4">
-        <label for="name" class="block">Name</label>
-        <small class="error text-red-500">This Field Is Required</small>
-      </div>
-      <input type="text" required id="name" placeholder="e.g Stephen King" />
+        <div class="label">
+          <label for="email" class="">Email Address</label>
+          <small
+            class="error"
+            *ngIf="
+              registrationForm.get('email')?.invalid &&
+              registrationForm.get('email')?.touched
+            "
+          >
+            This Field Is Required
+          </small>
+        </div>
+        <input
+          type="email"
+          required
+          id="email"
+          placeholder="e.g Stephenking@lorm.com"
+          formControlName="email"
+          [class.invalid]="
+            registrationForm.get('email')?.invalid &&
+            registrationForm.get('email')?.touched
+          "
+        />
 
-      <div class="label">
-        <label for="email" class="">Email Address</label>
-        <small class="error">This Field Is Required</small>
+        <div class="label mb-4">
+          <label for="phone" class="block text-gray-700">Phone</label>
+          <small
+            class="error"
+            *ngIf="
+              registrationForm.get('phone')?.invalid &&
+              registrationForm.get('phone')?.touched
+            "
+          >
+            This Field Is Required
+          </small>
+        </div>
+        <input
+          type="number"
+          required
+          id="number"
+          placeholder="e.g +234-567-890"
+          formControlName="phone"
+          [class.invalid]="
+            registrationForm.get('phone')?.invalid &&
+            registrationForm.get('phone')?.touched
+          "
+        />
+      </form>
+      <div class="btn">
+        <button
+          class="next-step"
+          (click)="navigateToSubscription()"
+          type="button"
+        >
+          Next Step
+        </button>
       </div>
-      <input
-        type="email"
-        required
-        id="email"
-        placeholder="e.g Stephenking@lorm.com"
-      />
-
-      <div class="label mb-4">
-        <label for="phone" class="block text-gray-700">Phone</label>
-        <small class="error">This Field Is Required</small>
-        <p class="error">Phone</p>
-      </div>
-      <input
-        type="number"
-        required
-        id="number"
-        placeholder="e.g +234-567-890"
-      />
-    </form>
-    <div class="btn">
-      <button
-        class="next-step"
-        (click)="navigateToSubscription()"
-        type="button"
-      >
-        Next Step
-      </button>
     </div>
   </div>
 </div>
+
+<app-subscription *ngIf="showSubscription"></app-subscription>
