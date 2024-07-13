@@ -10,9 +10,11 @@ import { SubscriptionComponent } from './pages/subscription/subscription.compone
 import { AddsComponent } from './pages/adds/adds.component';
 import { ResubalbuttonComponent } from './components/resubalbutton/resubalbutton.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SummaryComponent } from './summary/summary.component';
+import { LastComponent } from './pages/last/last.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FormComponent, SidebarComponent, SubscriptionComponent, AddsComponent, ResubalbuttonComponent],
+  declarations: [AppComponent, HomeComponent, FormComponent, SidebarComponent, SubscriptionComponent, AddsComponent, ResubalbuttonComponent, SummaryComponent, LastComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

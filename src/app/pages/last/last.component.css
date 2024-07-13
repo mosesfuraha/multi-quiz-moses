@@ -1,0 +1,39 @@
+.thank-you-message {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
+  height: 100%;
+}
+
+.thank-you-message svg {
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.thank-you-message h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #333;
+  margin: 0; 
+}
+
+.thank-you-message p {
+  font-size: 0.9em; 
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+  margin: 5px 0; 
+  padding: 0;
+  width: 400px;
+}
+
+.thank-you-message a {
+  text-decoration: none;
+}
+
+.thank-you-message a:hover {
+  text-decoration: underline;
+}

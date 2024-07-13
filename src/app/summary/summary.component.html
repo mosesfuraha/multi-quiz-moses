@@ -1,0 +1,44 @@
+<div *ngIf="!showLastComponent">
+  <div class="summary-container font-[Ubuntu]">
+    <div class="summary">
+      <div class="summary-header">
+        <h1>Finishing Up</h1>
+        <p>Double-check everything looks correct before confirming</p>
+      </div>
+      <div class="summary-adds-on">
+        <h1>{{ selectedPlan }} ({{ isYearly ? "Yearly" : "Monthly" }})</h1>
+        <div class="add-ons">
+          <p><a href="#" (click)="goBack()">Change</a></p>
+          <hr />
+          <span>${{ planPrice }}/{{ isYearly ? "yr" : "mo" }}</span>
+        </div>
+        <div class="services">
+          <p *ngIf="addOns['onlineService']">
+            Online service
+            <span>${{ isYearly ? 10 : 1 }}/{{ isYearly ? "yr" : "mo" }}</span>
+          </p>
+          <p *ngIf="addOns['largerStorage']">
+            Larger Storage
+            <span>${{ isYearly ? 20 : 2 }}/{{ isYearly ? "yr" : "mo" }}</span>
+          </p>
+          <p *ngIf="addOns['customizableProfile']">
+            Customizable Profile
+            <span>${{ isYearly ? 20 : 2 }}/{{ isYearly ? "yr" : "mo" }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="total">
+        <span>Total (per {{ isYearly ? "year" : "month" }})</span>
+        <p class="total-price">
+          +${{ totalPrice }}/{{ isYearly ? "yr" : "mo" }}
+        </p>
+      </div>
+      <div class="btns">
+        <button class="go-back" (click)="goBack()">Go Back</button>
+        <button class="next-step" (click)="confirm()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-last *ngIf="showLastComponent"></app-last>

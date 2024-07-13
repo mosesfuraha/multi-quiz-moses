@@ -1,0 +1,136 @@
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.summary {
+  width: 100%;
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+
+.summary-header {
+  margin-bottom: 2rem;
+}
+
+.summary-header h1 {
+  font-size: 2rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+}
+
+.summary-header p {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+
+.summary-adds-on {
+  background-color: hsla(206, 94%, 87%, 0.159);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.add-ons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid hsl(229, 24%, 87%);
+}
+.add-ons p {
+  color: hsl(243, 100%, 62%);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.add-ons span {
+  display: block;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.summary-adds-on h1 {
+  font-size: 0.8rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.summary-adds-on hr {
+  border: 0;
+  border-top: 1px solid hsl(229, 24%, 87%);
+  margin: 1rem 0;
+}
+
+.services {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.services p {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 1rem;
+}
+.total p {
+  font-size: 1rem;
+}
+.total span {
+  font-weight: 700;
+  color: hsl(231, 11%, 63%);
+  font-size: 13px;
+}
+
+.total-price {
+  color: hsl(243, 100%, 62%);
+  font-weight: 900;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+button {
+  border: none;
+  font-weight: 700;
+  border-radius: 7px;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button.next-step {
+  background-color: hsl(243, 100%, 62%);
+  color: white;
+}
+
+button.next-step:hover {
+  background-color: hsl(213, 96%, 25%);
+}
+
+button.go-back {
+  background-color: transparent;
+  color: hsl(231, 11%, 63%);
+}
+
+button.go-back:hover {
+  background-color: hsl(0, 0%, 90%);
+}

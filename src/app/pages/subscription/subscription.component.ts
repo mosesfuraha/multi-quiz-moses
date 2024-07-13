@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SubscriptionService } from '../../services/subscription.service';
 
 @Component({
   selector: 'app-subscription',
@@ -6,23 +7,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./subscription.component.css'],
 })
 export class SubscriptionComponent {
-  isYearly: boolean = false;
-  selectedPlan: string = 'Arcade';
-  showAddsComponent: boolean = false;
+  constructor(private subscriptionService: SubscriptionService) {}
+
+  get isYearly() {
+    return this.subscriptionService.getIsYearly();
+  }
+
+  get selectedPlan() {
+    return this.subscriptionService.getSelectedPlan();
+  }
+
+  get showAddsComponent() {
+    return this.subscriptionService.getAddOns()['showAddsComponent'];
+  }
 
   toggleBilling() {
-    this.isYearly = !this.isYearly;
+    this.subscriptionService.setIsYearly(!this.isYearly);
   }
 
   selectPlan(plan: string) {
-    this.selectedPlan = plan;
+    this.subscriptionService.setSelectedPlan(plan);
   }
 
   goBack() {
-    this.showAddsComponent = false;
+    this.subscriptionService.setAddOn('showAddsComponent', false);
   }
 
   nextStep() {
-    this.showAddsComponent = true;
+    this.subscriptionService.setAddOn('showAddsComponent', true);
   }
 }

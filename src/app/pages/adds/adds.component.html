@@ -1,48 +1,68 @@
-<div class="add-container font-[ubuntu]">
-  <div class="add-content">
-    <div class="add-header">
-      <h1 class="text-[2rem] text-[hsl(213,96%,18%)] font-bold">
-        Pick add-ons
-      </h1>
-      <p class="">Add-ons help enhance your gaming experience.</p>
-    </div>
-    <form class="add-container">
-      <div class="box">
-        <input type="checkbox" id="online" />
-        <div class="description-add">
-          <label for="online">Online service</label>
-          <small>Access to multiplayer games</small>
-        </div>
-        <p class="price">+$1/mo</p>
+<div *ngIf="!showSummaryComponent">
+  <div class="add-container font-[ubuntu]">
+    <div class="add-content">
+      <div class="add-header">
+        <h1 class="text-[2rem] text-[hsl(213,96%,18%)] font-bold">
+          Pick add-ons
+        </h1>
+        <p class="">Add-ons help enhance your gaming experience.</p>
       </div>
-      <div class="box" data-id="2">
-        <input type="checkbox" id="larger" />
-        <div class="description-add">
-          <label for="larger">Larger storage</label>
-          <small>Extra 1TB of cloud save</small>
+      <form class="add-container">
+        <div class="box">
+          <input 
+            type="checkbox" 
+            id="online" 
+            (change)="toggleAddOn('onlineService', $event)"
+            [checked]="addOns['onlineService']" 
+          />
+          <div class="description-add">
+            <label for="online">Online service</label>
+            <small>Access to multiplayer games</small>
+          </div>
+          <p class="price">+${{ isYearly ? 10 : 1 }}/{{ isYearly ? 'yr' : 'mo' }}</p>
         </div>
-        <p class="price">+$2/mo</p>
-      </div>
-      <div class="box" data-id="3">
-        <input type="checkbox" id="profile" />
-        <div class="description-add">
-          <label for="profile">Customizable Profile</label>
-          <small>Custom theme on your profile</small>
+        <div class="box" data-id="2">
+          <input 
+            type="checkbox" 
+            id="larger" 
+            (change)="toggleAddOn('largerStorage', $event)"
+            [checked]="addOns['largerStorage']" 
+          />
+          <div class="description-add">
+            <label for="larger">Larger storage</label>
+            <small>Extra 1TB of cloud save</small>
+          </div>
+          <p class="price">+${{ isYearly ? 20 : 2 }}/{{ isYearly ? 'yr' : 'mo' }}</p>
         </div>
-        <p class="price">+$2/mo</p>
+        <div class="box" data-id="3">
+          <input 
+            type="checkbox" 
+            id="profile" 
+            (change)="toggleAddOn('customizableProfile', $event)"
+            [checked]="addOns['customizableProfile']" 
+          />
+          <div class="description-add">
+            <label for="profile">Customizable Profile</label>
+            <small>Custom theme on your profile</small>
+          </div>
+          <p class="price">+${{ isYearly ? 20 : 2 }}/{{ isYearly ? 'yr' : 'mo' }}</p>
+        </div>
+      </form>
+      <div class="btns">
+        <app-resubalbutton
+          [label]="'Go Back'"
+          [type]="'button'"
+          [customClass]="'go-back'"
+        ></app-resubalbutton>
+        <app-resubalbutton
+          [label]="'Next Step'"
+          [type]="'button'"
+          [customClass]="'next-step'"
+          (buttonClick)="goToSummary()"
+        ></app-resubalbutton>
       </div>
-    </form>
-    <div class="btns">
-      <app-resubalbutton
-        [label]="'Go Back'"
-        [type]="'button'"
-        [customClass]="'go-back'"
-      ></app-resubalbutton>
-      <app-resubalbutton
-        [label]="'Next Step'"
-        [type]="'button'"
-        [customClass]="'next-step'"
-      ></app-resubalbutton>
     </div>
   </div>
 </div>
+
+<app-summary *ngIf="showSummaryComponent"></app-summary>
