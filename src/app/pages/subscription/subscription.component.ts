@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { SubscriptionService } from '../../services/subscription.service';
+import { StepsService } from '../../services/steps.service';
 
 @Component({
   selector: 'app-subscription',
@@ -7,7 +8,11 @@ import { SubscriptionService } from '../../services/subscription.service';
   styleUrls: ['./subscription.component.css'],
 })
 export class SubscriptionComponent {
-  constructor(private subscriptionService: SubscriptionService) {}
+  constructor(
+    private subscriptionService: SubscriptionService,
+    private stepsService: StepsService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   get isYearly() {
     return this.subscriptionService.getIsYearly();
@@ -29,11 +34,10 @@ export class SubscriptionComponent {
     this.subscriptionService.setSelectedPlan(plan);
   }
 
-  goBack() {
-    this.subscriptionService.setAddOn('showAddsComponent', false);
-  }
-
   nextStep() {
     this.subscriptionService.setAddOn('showAddsComponent', true);
+    this.stepsService.setStep(3);
+    console.log('After nextStep: showAddsComponent =', this.showAddsComponent);
+    this.cd.detectChanges(); 
   }
 }

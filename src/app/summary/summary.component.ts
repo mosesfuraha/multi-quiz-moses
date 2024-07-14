@@ -8,6 +8,7 @@ import { SubscriptionService } from '../services/subscription.service';
 })
 export class SummaryComponent {
   showLastComponent = false;
+
   constructor(private subscriptionService: SubscriptionService) {}
 
   get isYearly() {

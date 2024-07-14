@@ -1,32 +1,10 @@
 <div class="slidar-container">
   <div class="mt-8 space-y-[2.2rem]">
-    <div class="step">
-      <div class="circle1 active">1</div>
+    <div class="step" *ngFor="let step of steps; let i = index">
+      <div class="circle1" [ngClass]="{ active: isActiveStep(i + 1) }">{{ i + 1 }}</div>
       <div class="step-container">
-        <span class="">Step 1</span>
-        <b class="">Your info</b>
-      </div>
-    </div>
-    <div class="step">
-      <div class="circle1">2</div>
-      <div class="step-container">
-        <span class="">Step 2</span>
-        <b class="">Select plan</b>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="circle1">3</div>
-      <div class="step-container">
-        <span class="">Step 3</span>
-        <b class="">Add-ons</b>
-      </div>
-    </div>
-    <div class="step">
-      <div class="circle1">4</div>
-      <div class="step-container">
-        <span class="">Step 4</span>
-        <b class="">Summary</b>
+        <span class="">Step {{ i + 1 }}</span>
+        <b class="">{{ step.title }}</b>
       </div>
     </div>
   </div>

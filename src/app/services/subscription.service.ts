@@ -37,5 +37,14 @@ export class SubscriptionService {
 
   setAddOn(addOn: string, value: boolean) {
     this.addOns[addOn] = value;
+    console.log(`${addOn} set to ${value}`);
+  }
+
+  setShowAddsComponent(value: boolean) {
+    this.addOns['showAddsComponent'] = value;
+  }
+
+  getShowAddsComponent() {
+    return this.addOns['showAddsComponent'];
   }
 }

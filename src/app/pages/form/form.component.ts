@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormService } from '../../services/form.service';
+import { StepsService } from '../../services/steps.service';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   registrationForm: FormGroup;
   showSubscription = false;
 
   constructor(
     private groupedForm: FormBuilder,
-    private formService: FormService
+    private stepsService: StepsService
   ) {
     this.registrationForm = this.groupedForm.group({
       userName: ['', Validators.required],
@@ -22,32 +22,12 @@ export class FormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.formService.formStatus$.subscribe({
-      next: (status) => {
-        if (status) {
-          this.showSubscriptionComponent();
-        }
-      },
-      error: (err) => {
-        console.error(err);
-        this.registrationForm.markAllAsTouched();
-      },
-      complete: () => {
-        console.log('Form validation complete');
-      },
-    });
-  }
-
-  navigateToSubscription(): void {
+  navigateToSubscription() {
     if (this.registrationForm.valid) {
-      this.showSubscriptionComponent();
+      this.showSubscription = true;
+      this.stepsService.setStep(2); // Assuming this is used for other purposes
     } else {
       this.registrationForm.markAllAsTouched();
     }
-  }
-
-  showSubscriptionComponent(): void {
-    this.showSubscription = true;
   }
 }
