@@ -38,6 +38,12 @@ export class SubscriptionComponent {
     this.subscriptionService.setAddOn('showAddsComponent', true);
     this.stepsService.setStep(3);
     console.log('After nextStep: showAddsComponent =', this.showAddsComponent);
-    this.cd.detectChanges(); 
+    this.cd.detectChanges();
+  }
+  previousStep() {
+    const currentStep = this.stepsService.getCurrentStep();
+    if (currentStep > 1) {
+      this.stepsService.setStep(currentStep - 1);
+    }
   }
 }

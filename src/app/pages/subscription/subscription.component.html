@@ -56,7 +56,9 @@
           </svg>
           <div class="plan-info">
             <b>Advanced</b>
-            <span class="plan-priced">{{ isYearly ? "$120/yr" : "$12/mo" }}</span>
+            <span class="plan-priced">{{
+              isYearly ? "$120/yr" : "$12/mo"
+            }}</span>
             <span class="plan-free" *ngIf="isYearly">2 months free</span>
           </div>
         </div>
@@ -82,7 +84,9 @@
           </svg>
           <div class="plan-info">
             <b>Pro</b>
-            <span class="plan-priced">{{ isYearly ? "$150/yr" : "$15/mo" }}</span>
+            <span class="plan-priced">{{
+              isYearly ? "$150/yr" : "$15/mo"
+            }}</span>
             <span class="plan-free" *ngIf="isYearly">2 months free</span>
           </div>
         </div>
@@ -100,6 +104,7 @@
           [label]="'Go Back'"
           [type]="'button'"
           [customClass]="'go-back'"
+          (buttonClick)="previousStep()"
         ></app-resubalbutton>
         <app-resubalbutton
           [label]="'Next Step'"

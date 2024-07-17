@@ -45,3 +45,37 @@
   color: hsl(0, 0%, 100%);
   font-size: 12px;
 }
+
+@media (max-width: 375px) {
+  .slidar-container {
+    background-image: url(../../../../public/assets/images/bg-sidebar-mobile.svg);
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mt-8 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .circle1 {
+    margin-left: 0;
+  }
+
+  .step-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .step-container span,
+  .step-container b {
+    font-size: 10px;
+  }
+}
