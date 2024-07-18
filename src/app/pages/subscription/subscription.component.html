@@ -1,4 +1,4 @@
-<div *ngIf="!showAddsComponent">
+<div *ngIf="!showAddsComponent && !showFormComponent">
   <div class="sub-container font-[Ubuntu]">
     <div class="container">
       <div class="sub-description">
@@ -117,4 +117,6 @@
   </div>
 </div>
 
-<app-adds *ngIf="showAddsComponent"></app-adds>
+<div *ngIf="showFormComponent">
+  <app-form></app-form>
+</div>

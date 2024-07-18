@@ -23,7 +23,11 @@ export class SubscriptionComponent {
   }
 
   get showAddsComponent() {
-    return this.subscriptionService.getAddOns()['showAddsComponent'];
+    return this.subscriptionService.getShowAddsComponent();
+  }
+
+  get showFormComponent() {
+    return this.subscriptionService.getShowFormComponent();
   }
 
   toggleBilling() {
@@ -35,15 +39,16 @@ export class SubscriptionComponent {
   }
 
   nextStep() {
-    this.subscriptionService.setAddOn('showAddsComponent', true);
+    this.subscriptionService.setShowAddsComponent(true);
+    this.subscriptionService.setShowFormComponent(false); // Ensure form component is hidden
     this.stepsService.setStep(3);
-    console.log('After nextStep: showAddsComponent =', this.showAddsComponent);
     this.cd.detectChanges();
   }
+
   previousStep() {
-    const currentStep = this.stepsService.getCurrentStep();
-    if (currentStep > 1) {
-      this.stepsService.setStep(currentStep - 1);
-    }
+    this.subscriptionService.setShowFormComponent(true);
+    this.subscriptionService.setShowAddsComponent(false); // Ensure add component is hidden
+    this.stepsService.setStep(1);
+    this.cd.detectChanges();
   }
 }

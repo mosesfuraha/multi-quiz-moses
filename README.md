@@ -1,7 +1,5 @@
 # Frontend Mentor - Multi-step Form Solution
 
-![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
-
 ## Welcome! 👋
 
 This is my solution for the Frontend Mentor multi-step form challenge.
@@ -24,7 +22,7 @@ You can view the live demo of the application [here](https://moses-multi-step-fo
 ### Technologies Used
 
 - **Angular**: Used for building the dynamic and interactive user interface.
-- **Tailwind CSS**: Utilized for styling and ensuring a responsive design.
+- **Tailwind , CSS**: Utilized for styling and ensuring a responsive design.
 - **TypeScript**: Employed for type-safe JavaScript development.
 
 ### Key Features
