@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SubscriptionService } from '../services/subscription.service';
+import { StepsService } from '../services/steps.service';
 
 @Component({
   selector: 'app-summary',
@@ -9,7 +10,7 @@ import { SubscriptionService } from '../services/subscription.service';
 export class SummaryComponent {
   showLastComponent = false;
 
-  constructor(private subscriptionService: SubscriptionService) {}
+  constructor(private subscriptionService: SubscriptionService, private stepsService: StepsService) {}
 
   get isYearly() {
     return this.subscriptionService.getIsYearly();
@@ -59,6 +60,7 @@ export class SummaryComponent {
   goBack() {
     this.subscriptionService.setAddOn('showAddsComponent', true);
     this.subscriptionService.setAddOn('showSummaryComponent', false);
+    this.stepsService.setStep(3)
   }
 
   confirm(): void {

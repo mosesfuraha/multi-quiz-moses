@@ -1,4 +1,4 @@
-<div *ngIf="!showSummaryComponent">
+<div *ngIf="!showSummaryComponent && !showSubscription">
   <div class="add-container font-[ubuntu]">
     <div class="add-content">
       <div class="add-header">
@@ -9,43 +9,49 @@
       </div>
       <form class="add-container">
         <div class="box">
-          <input 
-            type="checkbox" 
-            id="online" 
+          <input
+            type="checkbox"
+            id="online"
             (change)="toggleAddOn('onlineService', $event)"
-            [checked]="addOns['onlineService']" 
+            [checked]="addOns['onlineService']"
           />
           <div class="description-add">
             <label for="online">Online service</label>
             <small>Access to multiplayer games</small>
           </div>
-          <p class="price">+${{ isYearly ? 10 : 1 }}/{{ isYearly ? 'yr' : 'mo' }}</p>
+          <p class="price">
+            +${{ isYearly ? 10 : 1 }}/{{ isYearly ? "yr" : "mo" }}
+          </p>
         </div>
         <div class="box" data-id="2">
-          <input 
-            type="checkbox" 
-            id="larger" 
+          <input
+            type="checkbox"
+            id="larger"
             (change)="toggleAddOn('largerStorage', $event)"
-            [checked]="addOns['largerStorage']" 
+            [checked]="addOns['largerStorage']"
           />
           <div class="description-add">
             <label for="larger">Larger storage</label>
             <small>Extra 1TB of cloud save</small>
           </div>
-          <p class="price">+${{ isYearly ? 20 : 2 }}/{{ isYearly ? 'yr' : 'mo' }}</p>
+          <p class="price">
+            +${{ isYearly ? 20 : 2 }}/{{ isYearly ? "yr" : "mo" }}
+          </p>
         </div>
         <div class="box" data-id="3">
-          <input 
-            type="checkbox" 
-            id="profile" 
+          <input
+            type="checkbox"
+            id="profile"
             (change)="toggleAddOn('customizableProfile', $event)"
-            [checked]="addOns['customizableProfile']" 
+            [checked]="addOns['customizableProfile']"
           />
           <div class="description-add">
             <label for="profile">Customizable Profile</label>
             <small>Custom theme on your profile</small>
           </div>
-          <p class="price">+${{ isYearly ? 20 : 2 }}/{{ isYearly ? 'yr' : 'mo' }}</p>
+          <p class="price">
+            +${{ isYearly ? 20 : 2 }}/{{ isYearly ? "yr" : "mo" }}
+          </p>
         </div>
       </form>
       <div class="btns">
@@ -53,6 +59,7 @@
           [label]="'Go Back'"
           [type]="'button'"
           [customClass]="'go-back'"
+          (buttonClick)="navigateToSubscription()"
         ></app-resubalbutton>
         <app-resubalbutton
           [label]="'Next Step'"
@@ -66,3 +73,5 @@
 </div>
 
 <app-summary *ngIf="showSummaryComponent"></app-summary>
+
+<app-subscription *ngIf="showSubscription"></app-subscription>

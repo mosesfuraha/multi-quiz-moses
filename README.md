@@ -22,18 +22,16 @@ You can view the live demo of the application [here](https://moses-multi-step-fo
 ### Technologies Used
 
 - **Angular**: Used for building the dynamic and interactive user interface.
-- **Tailwind , CSS**: Utilized for styling and ensuring a responsive design.
+- **Tailwind CSS**: Utilized for styling and ensuring a responsive design.
 - **TypeScript**: Employed for type-safe JavaScript development.
 
 ### Key Features
 
 1. **Reactive Forms**:
-
    - Implemented using Angular's Reactive Forms.
    - Provides efficient form validation and dynamic form control.
 
 2. **Step Navigation**:
-
    - Allows users to navigate through different steps of the form.
    - Users can move forward to the next step or go back to the previous step.
 
@@ -46,6 +44,10 @@ You can view the live demo of the application [here](https://moses-multi-step-fo
 - **Enhanced Responsiveness**: Improving the responsiveness for small screens and tablets.
 - **Additional Features**: Adding more features to improve user experience and functionality.
 
+### Known Issues
+
+- **Responsiveness for Smaller Screens**: Currently, the responsiveness is not fully working for smaller screens. This is an area of ongoing improvement.
+
 ## Getting Started
 
 To run this project locally, follow these steps:
@@ -53,27 +55,3 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/multi-step-form.git
-   ```
-2. **Navigate to the project directory**:
-   ```bash
-   cd multi-step-form
-   ```
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-4. **Run the application**:
-   ```bash
-   ng serve
-   ```
-5. **Open your browser** and visit `http://localhost:4200`.
-
-## Deployment
-
-The project is deployed on Netlify. You can view the live version [here](https://moses-multi-step-form-app.netlify.app/).
-
-## Feedback
-
-I appreciate any feedback on my solution. Feel free to reach out if you have any suggestions or improvements.
-
-**Have fun building!** 🚀

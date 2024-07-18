@@ -14,7 +14,8 @@ export class SubscriptionService {
     largerStorage: false,
     customizableProfile: false,
   };
-  private showFormComponent: boolean = true;
+  private showFormComponent: boolean = false;
+  private showSubscriptionComponent: boolean = true; // Added this line
 
   getIsYearly() {
     return this.isYearly;
@@ -56,5 +57,15 @@ export class SubscriptionService {
 
   getShowFormComponent() {
     return this.showFormComponent;
+  }
+
+  setShowSubscriptionComponent(value: boolean) {
+    // Added this method
+    this.showSubscriptionComponent = value;
+  }
+
+  getShowSubscriptionComponent() {
+    // Added this method
+    return this.showSubscriptionComponent;
   }
 }

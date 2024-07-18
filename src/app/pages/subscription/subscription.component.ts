@@ -39,15 +39,15 @@ export class SubscriptionComponent {
   }
 
   nextStep() {
-    this.subscriptionService.setShowAddsComponent(true);
-    this.subscriptionService.setShowFormComponent(false); // Ensure form component is hidden
+    this.subscriptionService.setAddOn('showAddsComponent', true);
+    this.subscriptionService.setShowFormComponent(false);
     this.stepsService.setStep(3);
+    console.log('After nextStep: showAddsComponent =', this.showAddsComponent);
     this.cd.detectChanges();
   }
-
   previousStep() {
     this.subscriptionService.setShowFormComponent(true);
-    this.subscriptionService.setShowAddsComponent(false); // Ensure add component is hidden
+    this.subscriptionService.setShowAddsComponent(false); 
     this.stepsService.setStep(1);
     this.cd.detectChanges();
   }

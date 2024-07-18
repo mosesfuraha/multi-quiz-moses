@@ -8,9 +8,11 @@ import { StepsService } from '../../services/steps.service';
   styleUrls: ['./adds.component.css'],
 })
 export class AddsComponent {
+  showSubscription = false;
+
   constructor(
     private subscriptionService: SubscriptionService,
-    private stepService: StepsService
+    private stepsService: StepsService
   ) {}
 
   get showSummaryComponent() {
@@ -27,11 +29,17 @@ export class AddsComponent {
 
   goToSummary() {
     this.subscriptionService.setAddOn('showSummaryComponent', true);
-    this.stepService.setStep(4);
+    this.stepsService.setStep(4);
   }
 
   toggleAddOn(addOn: string, event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.subscriptionService.setAddOn(addOn, isChecked);
+  }
+
+  navigateToSubscription() {
+    this.stepsService.setStep(2);
+    this.subscriptionService.setShowAddsComponent(false);
+    this.subscriptionService.setShowSubscriptionComponent(true);
   }
 }
