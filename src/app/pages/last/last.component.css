@@ -18,14 +18,14 @@
   font-weight: 700;
   font-size: 2rem;
   color: #333;
-  margin: 0; 
+  margin: 0;
 }
 
 .thank-you-message p {
-  font-size: 0.9em; 
+  font-size: 0.9em;
   color: hsl(231, 11%, 63%);
   font-weight: 500;
-  margin: 5px 0; 
+  margin: 5px 0;
   padding: 0;
   width: 400px;
 }
@@ -36,4 +36,12 @@
 
 .thank-you-message a:hover {
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .thank-you-message {
+    margin: auto;
+  }
+  .thank-you-message p {
+    width: 90%;
+  }
 }

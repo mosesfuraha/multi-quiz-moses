@@ -132,3 +132,65 @@ input:checked + .slider:before {
   justify-content: space-between;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .sub-container {
+    margin: auto;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem;
+    width: 85%;
+  }
+  .sub-description {
+    margin-left: 2rem;
+    width: 85%;
+  }
+
+  .card-one {
+    width: 100%;
+  }
+
+  .switcher {
+    width: 85%;
+    margin-left: 2rem;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 1rem;
+    width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-description h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding-top: 0.5rem;
+    line-height: 1.5rem;
+  }
+
+  .card-one {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  .switcher {
+    gap: 0.5rem;
+  }
+  .btns {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+}

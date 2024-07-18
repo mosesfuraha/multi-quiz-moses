@@ -9,8 +9,12 @@ import { StepsService } from '../services/steps.service';
 })
 export class SummaryComponent {
   showLastComponent = false;
+  
 
-  constructor(private subscriptionService: SubscriptionService, private stepsService: StepsService) {}
+  constructor(
+    private subscriptionService: SubscriptionService,
+    private stepsService: StepsService
+  ) {}
 
   get isYearly() {
     return this.subscriptionService.getIsYearly();
@@ -60,10 +64,10 @@ export class SummaryComponent {
   goBack() {
     this.subscriptionService.setAddOn('showAddsComponent', true);
     this.subscriptionService.setAddOn('showSummaryComponent', false);
-    this.stepsService.setStep(3)
+    this.stepsService.setStep(3);
   }
 
-  confirm(): void {
+  confirm() {
     this.showLastComponent = true;
   }
 }

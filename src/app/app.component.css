@@ -1,5 +1,3 @@
-/* app.css */
-
 .container-wrapper {
   width: 900px;
   background-color: hsl(0, 0%, 100%);
@@ -22,12 +20,15 @@
   box-sizing: border-box;
 }
 @media (max-width: 768px) {
+  .container-wrapper {
+    width: 350px;
+    height: 630px;
+  }
   .container {
     flex-direction: column;
   }
 
   .sidebar {
     width: 100%;
-    padding: 10px;
   }
 }

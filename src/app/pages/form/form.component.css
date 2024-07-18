@@ -71,3 +71,59 @@ form .invalid:focus {
   cursor: pointer;
   width: 100px;
 }
+
+@media (max-width: 1024px) {
+  .header-container {
+    margin-left: 2rem;
+  }
+
+  .btn {
+    width: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    margin-left: 1rem;
+    padding: 1rem;
+    margin: auto;
+  }
+
+  .header {
+    padding-top: 1rem;
+    line-height: 2rem;
+  }
+
+  .btn {
+    width: 80px;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    margin-left: 0.5rem;
+    padding: 1rem;
+  }
+
+  .header {
+    padding-top: 0.5rem;
+    line-height: 1.5rem;
+  }
+
+  .label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-container form input {
+    padding: 0.1rem;
+    padding-left: 0.5rem;
+    height: 60px;
+  }
+
+  .btn {
+    width: 100px;
+    margin-top: 2rem;
+  }
+}

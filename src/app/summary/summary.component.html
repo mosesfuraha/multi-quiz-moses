@@ -34,8 +34,18 @@
         </p>
       </div>
       <div class="btns">
-        <button class="go-back" (click)="goBack()">Go Back</button>
-        <button class="next-step" (click)="confirm()">Confirm</button>
+        <app-resubalbutton
+          [label]="'Go Back'"
+          [type]="'button'"
+          [customClass]="'go-back'"
+          (buttonClick)="goBack()"
+        ></app-resubalbutton>
+        <app-resubalbutton
+          [label]="'Confirm'"
+          [type]="'button'"
+          [customClass]="'confirm'"
+          (buttonClick)="confirm()"
+        ></app-resubalbutton>
       </div>
     </div>
   </div>

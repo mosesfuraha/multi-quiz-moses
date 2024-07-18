@@ -1,7 +1,11 @@
 <div class="slidar-container">
-  <div class="mt-8 space-y-[2.2rem]">
+  <div
+    class="mt-8 space-y-[2.2rem] max-sm:space-y-0 max-sm:flex max-sm:gap-5 max-sm:w-full max-sm:items-center max-sm:justify-center max-md:space-y-0 max-md:flex max-md:gap-5 max-md:w-full max-md:items-center max-md:justify-center"
+  >
     <div class="step" *ngFor="let step of steps; let i = index">
-      <div class="circle1" [ngClass]="{ active: isActiveStep(i + 1) }">{{ i + 1 }}</div>
+      <div class="circle1" [ngClass]="{ active: isActiveStep(i + 1) }">
+        {{ i + 1 }}
+      </div>
       <div class="step-container">
         <span class="">Step {{ i + 1 }}</span>
         <b class="">{{ step.title }}</b>

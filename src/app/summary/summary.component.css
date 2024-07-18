@@ -134,3 +134,31 @@ button.go-back {
 button.go-back:hover {
   background-color: hsl(0, 0%, 90%);
 }
+@media (max-width: 768px) {
+  .summary {
+    width: 100%;
+    margin: auto;
+  }
+  .summary-header {
+    width: 100%;
+  }
+  .summary-header h1 {
+    font-size: 20px;
+    margin-left: 2rem;
+  }
+  .summary-header p {
+    margin-left: 2rem;
+  }
+  .summary-adds-on {
+    width: 85%;
+    margin-left: 2rem;
+  }
+  .total {
+    width: 85%;
+    margin-left: 2rem;
+  }
+  .btns {
+    width: 85%;
+    margin-left: 2rem;
+  }
+}

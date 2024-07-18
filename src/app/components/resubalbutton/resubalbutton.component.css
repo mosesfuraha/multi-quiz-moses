@@ -3,12 +3,13 @@ button {
   margin-bottom: 2rem;
   margin-left: auto;
   border: none;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 7px;
   background-color: hsl(213, 96%, 18%);
   color: white;
   cursor: pointer;
-  width: 100px;
+  /* width: 100px; */
+  transition: background-color 0.3s ease;
 }
 
 button.next-step {
@@ -19,7 +20,10 @@ button.next-step {
 button.next-step:hover {
   background-color: hsl(213, 96%, 25%);
 }
-
+button.confirm {
+  background-color: hsl(243, 100%, 62%);
+  color: white;
+}
 button.go-back {
   background-color: transparent;
   color: hsl(231, 11%, 63%);
@@ -27,4 +31,29 @@ button.go-back {
 
 button.go-back:hover {
   background-color: hsl(0, 0%, 90%);
+}
+
+@media (max-width: 768px) {
+  button {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    width: 100%;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
