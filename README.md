@@ -28,10 +28,12 @@ You can view the live demo of the application [here](https://moses-multi-step-fo
 ### Key Features
 
 1. **Reactive Forms**:
+
    - Implemented using Angular's Reactive Forms.
    - Provides efficient form validation and dynamic form control.
 
 2. **Step Navigation**:
+
    - Allows users to navigate through different steps of the form.
    - Users can move forward to the next step or go back to the previous step.
 
@@ -41,12 +43,8 @@ You can view the live demo of the application [here](https://moses-multi-step-fo
 
 ### Work in Progress
 
-- **Enhanced Responsiveness**: Improving the responsiveness for small screens and tablets.
+- **Enhanced Responsiveness**: Improving the responsiveness for tablets.
 - **Additional Features**: Adding more features to improve user experience and functionality.
-
-### Known Issues
-
-- **Responsiveness for Smaller Screens**: Currently, the responsiveness is not fully working for smaller screens. This is an area of ongoing improvement.
 
 ## Getting Started
 
@@ -55,3 +53,4 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/multi-step-form.git
+   ```
