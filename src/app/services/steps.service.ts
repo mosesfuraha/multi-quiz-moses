@@ -22,7 +22,6 @@ export class StepsService {
 
   private validateStep(step: number): boolean {
     const currentStep = this.getCurrentStep();
-    // Ensure the steps are sequential
     if (step === currentStep + 1 || step === currentStep - 1) {
       return true;
     }
